@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview of all tools</title>
+</head>
+<body>
+
+<h1>Overview of all tools</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Application</th>
+    </tr>
+    <tr th:each="tool : ${allTools}">
+        <td th:text="${"></td>
+        <td th:text="${book.author}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
