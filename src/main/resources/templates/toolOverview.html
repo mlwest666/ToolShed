@@ -14,8 +14,8 @@
         <th>Application</th>
     </tr>
     <tr th:each="tool : ${allTools}">
-        <td th:text="${"></td>
-        <td th:text="${book.author}"></td>
+        <td th:text="${tool.name}"></td>
+        <td th:text="${tool.application}"></td>
     </tr>
 </table>
 
