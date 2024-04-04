@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nl.miwnn.se13.mareth</groupId>
-	<artifactId>toolshed</artifactId>
+	<artifactId>Toolshed</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Tool Shed</name>
 	<description>Demo project tool exchange</description>

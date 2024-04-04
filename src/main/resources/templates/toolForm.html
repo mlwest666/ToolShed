@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit a new tool</title>
+</head>
+<body>
+
+<h1>Submit a new tool</h1>
+
+<form th:action="@{/tool/new}" method="post" th:object="${newTool}">
+    <table>
+    <tr>
+        <td><label for="nameField">Name</label> </td>
+        <td><label for="applicationField">Application</label> </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" id="nameField" th:field="*{name}"/>
+        </td>
+        <td>
+            <input type="text" id="applicationField" th:field="*{application}"/>
+        </td>
+
+    </tr>
+    </table>
+    <input type="submit" value="Save Tool" />
+</form>
+</body>
+</html>
