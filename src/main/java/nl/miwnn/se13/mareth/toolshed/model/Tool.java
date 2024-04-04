@@ -3,6 +3,9 @@ package nl.miwnn.se13.mareth.toolshed.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
 
 /**
  * @author Mareth Westhoff.
@@ -10,10 +13,28 @@ import jakarta.persistence.Id;
  */
 @Entity
 public class Tool {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long toolId;
     private String name;
     private String application;
+
+    @OneToMany(mappedBy = "tool")
+    private List<Item> items;
+
+    public int getAvailableItems() {
+        int count = 0;
+        for (Item item : items) {
+            if (item.getAvailable()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getTotalItems() {
+    return items.size();
+    }
 
     public Tool(String name, String application) {
         this.name = name;
@@ -23,6 +44,7 @@ public class Tool {
     public Tool() {
 
     }
+
 
     public Long getToolId() {
         return toolId;

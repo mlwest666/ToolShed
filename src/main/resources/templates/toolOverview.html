@@ -12,10 +12,17 @@
     <tr>
         <th>Name</th>
         <th>Application</th>
+        <th>Available</th>
+        <th>Total</th>
+        <th>Buy</th>
+
     </tr>
     <tr th:each="tool : ${allTools}">
         <td th:text="${tool.name}"></td>
         <td th:text="${tool.application}"></td>
+        <td th:text="${tool.getAvailableItems()}"></td>
+        <td th:text="${tool.getTotalItems()}"></td>
+        <td><a th:href="@{/item/new/{toolId}(toolId = ${tool.toolId})}"> Add a Tool</a></td>
     </tr>
 </table>
 
